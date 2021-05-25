@@ -12,20 +12,8 @@ const clientDir = __dirname + "\\client\\"
 app.use(express.json())
 app.use(express.urlencoded())
 
-app.set('view engine', 'ejs')
-
-app.get('/', (req, res) => {
-  res.render('pages/index.ejs', { name:"Ludde", nameList: nameList })
-})
-
-app.get('/', (req, res) => res.sendFile(clientDir + "index.ejs"))
-
 app.get('/style.css', (req, res) => {
     res.sendFile(clientDir + 'index')
-})
-
-app.get('/postmalone.png', (req, res) => {
-    res.sendFile(clientDir + 'postmalone.png')
 })
 
 app.post('/', (req,res) => {
