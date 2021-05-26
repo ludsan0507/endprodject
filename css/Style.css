@@ -1,7 +1,11 @@
-body {background-color: grey;}
+.body {background-color: grey;}
+
+.img {
+    float: center;
+}
 
 .rate {
-    float: middle;
+    float: center;
     height: 46px;
     padding: 0 10px;
 }
@@ -18,9 +22,8 @@ body {background-color: grey;}
     font-size:30px;
     color:#ccc;
 }
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
+
+
 .rate > input:checked ~ label {
     color: #ffc700;
 }
@@ -35,3 +38,24 @@ body {background-color: grey;}
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+
+.vertical-menu {
+    width: 200px; 
+  }
+  
+  .vertical-menu a {
+    background-color: #eee; 
+    color: black; 
+    display: block; 
+    padding: 12px; 
+    text-decoration: none; 
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc; 
+  }
+  
+  .vertical-menu a.active {
+    background-color: #04AA6D; 
+    color: white;
+  }
