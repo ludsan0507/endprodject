@@ -8,8 +8,9 @@ const nameList= ["", ""]
 const personmodul = require('./Personmodule')
 const store = require('./mongodbTest')
 
-const clientDir = __dirname + "\\client\\"
+const clientDir = __dirname + "\\views\\"
 
+app.use(express.static(__dirname+'\\static\\'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static(clientDir))
@@ -21,11 +22,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req,res) => {
-
     let person = personmodul.createPerson(req.body.name, req.body.email, req.body.password)
     store.storeElement(person);
     res.redirect('/')
 })
 
 app.listen(port, () => console.log('Example app listening on port ${port}!'))
-
